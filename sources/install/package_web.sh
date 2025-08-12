@@ -921,6 +921,18 @@ function install_bbot() {
 }
 
 
+function install_xsschecker() {
+	# CODE-CHECK-WHITELIST=add-aliases
+	colorecho "Installing xsschecker"
+	go install github.com/rix4uni/xsschecker@latest
+	asdf reshim golang
+	add-aliases xsschecker
+	add-history xsschecker
+	add-test-command "xsschecker"
+	add-to-list "xsschecker,https://github.com/rix4uni/xsschecker,a tool that checking reflected endpoints finding possible xss vulnerable endpoints."
+}
+
+
 # Package dedicated to applicative and active web pentest tools
 function package_web() {
     set_env
@@ -1002,6 +1014,7 @@ function package_web() {
     install_zap                     # Zed Attack Proxy
     install_token_exploiter         # Github personal token Analyzer
     install_bbot                    # Recursive Scanner
+    install_xsschecker				# Checker of reflected endpoints for potential xss vulnerability
     post_install
     end_time=$(date +%s)
     local elapsed_time=$((end_time - start_time))
