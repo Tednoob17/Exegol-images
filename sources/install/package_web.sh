@@ -501,7 +501,7 @@ function install_jwt_tool() {
     # Running the tool to create the initial configuration and force it to returns 0
     python3 jwt_tool.py || :
     deactivate
-
+    
     # Configuration
     sed -i 's/^proxy = 127.0.0.1:8080/#proxy = 127.0.0.1:8080/' /root/.jwt_tool/jwtconf.ini
     sed -i 's|^wordlist = jwt-common.txt|wordlist = /opt/tools/jwt_tool/jwt-common.txt|' /root/.jwt_tool/jwtconf.ini
@@ -902,7 +902,7 @@ function install_zap() {
     add-test-command "zap -suppinfo"
     add-to-list "Zed Attack Proxy (ZAP),https://www.zaproxy.org/,Web application security testing tool."
 }
-
+    
 function install_token_exploiter() {
     # CODE-CHECK-WHITELIST=add-aliases,add-history
     colorecho "Installing Token Exploiter"
