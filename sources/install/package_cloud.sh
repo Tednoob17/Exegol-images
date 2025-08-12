@@ -140,6 +140,20 @@ function install_azure_cli() {
     add-to-list "azure-cli,https://github.com/Azure/azure-cli,A great cloud needs great tools; we're excited to introduce Azure CLI our next generation multi-platform command line experience for Azure."
 }
 
+function install_s3scanner() {
+	# CODE-CHECK-WHITELIST=add-aliases
+	colorecho "Installing s3scanner"
+	git -C /opt/tools/ 	clone  https://github.com/sa7mon/S3Scanner.git
+	cd /opt/tools/s3scanner || exit
+	asdf reshim	golang
+	go build -o s3scanner .
+	ln -s /opt/tools/s3scanner/s3scanner /opt/tools/bin/s3scanner
+	add-aliases	s3scanner
+	add-history s3scanner
+	add-test-command "s3scanner --h"
+	add-to-list "s3scanner,https://github.com/sa7mon/S3Scanner, a go tool for s3 buckets misconfiguration across S3-compatible APIs"
+}
+
 # Package dedicated to cloud tools
 function package_cloud() {
     set_env
@@ -155,6 +169,7 @@ function package_cloud() {
     install_prowler
     install_cloudmapper
     install_azure_cli       # Command line for Azure
+    install_s3scanner		# S3 buckets misconfiguration scanner
     post_install
     end_time=$(date +%s)
     local elapsed_time=$((end_time - start_time))
