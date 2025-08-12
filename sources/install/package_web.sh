@@ -920,6 +920,17 @@ function install_bbot() {
     add-to-list "BBOT,https://github.com/blacklanternsecurity/bbot,BEE·bot is a multipurpose scanner inspired by Spiderfoot built to automate your Recon and ASM."
 }
 
+function install_bxss() {
+	# CODE-CHECK-WHITELIST=add-aliases
+	colorecho "Installing bxss"
+	go install -v github.com/ethicalhackingplayground/bxss/v2/cmd/bxss@latest
+	asdf reshim golang
+	add-aliases bxss
+	add-history bxss
+	add-test-command "bxss"
+	add-to-list "bxss, https://github.com/ethicalhackingplayground/bxss, a tool that can be used to scan for blind XSS vulnerabilities in web applications."
+}
+
 
 # Package dedicated to applicative and active web pentest tools
 function package_web() {
@@ -1002,6 +1013,7 @@ function package_web() {
     install_zap                     # Zed Attack Proxy
     install_token_exploiter         # Github personal token Analyzer
     install_bbot                    # Recursive Scanner
+    install_bxss					# Blind xss scanner
     post_install
     end_time=$(date +%s)
     local elapsed_time=$((end_time - start_time))
