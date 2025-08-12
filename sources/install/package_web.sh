@@ -920,6 +920,18 @@ function install_bbot() {
     add-to-list "BBOT,https://github.com/blacklanternsecurity/bbot,BEE·bot is a multipurpose scanner inspired by Spiderfoot built to automate your Recon and ASM."
 }
 
+function install_jxscout() {
+	# CODE-CHECK-WHITELIST=add-aliases
+	colorecho "Installing jxscout"
+	fapt unzip
+	go install  github.com/francisconeves97/jxscout/cmd/jxscout@latest
+	asdf reshim golang
+	curl -fsSL https://bun.com/install | bash -s "bun-v1.2.12"
+	add-aliases jxscout
+	add-history jxscout
+	add-test-command "jxscout"
+	add-to-list "jxscout, https://github.com/francisconeves97/jxscout,a superpowers JavaScript analysis for security researchers."
+}
 
 # Package dedicated to applicative and active web pentest tools
 function package_web() {
@@ -1002,6 +1014,7 @@ function package_web() {
     install_zap                     # Zed Attack Proxy
     install_token_exploiter         # Github personal token Analyzer
     install_bbot                    # Recursive Scanner
+    install_jxscout					# JavaScript analysis  tool
     post_install
     end_time=$(date +%s)
     local elapsed_time=$((end_time - start_time))
