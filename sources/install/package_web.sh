@@ -920,6 +920,16 @@ function install_bbot() {
     add-to-list "BBOT,https://github.com/blacklanternsecurity/bbot,BEE·bot is a multipurpose scanner inspired by Spiderfoot built to automate your Recon and ASM."
 }
 
+function install_dalfox() {
+	# CODE-CHECK-WHITELIST=add-aliases
+	colorecho "Installing dalfox"
+	go install github.com/hahwul/dalfox/v2@latest
+	asdf reshim golang
+	add-aliases dalfox
+	add-history dalfox
+	add-test-command "dalfox url https://example.com"
+	add-to-list "dalfox,https://github.com/hahwul/dalfox, a powerful open-source XSS scanner and utility focused on automation."
+}
 
 # Package dedicated to applicative and active web pentest tools
 function package_web() {
@@ -1002,6 +1012,7 @@ function package_web() {
     install_zap                     # Zed Attack Proxy
     install_token_exploiter         # Github personal token Analyzer
     install_bbot                    # Recursive Scanner
+    install_dalfox					# A automation tool for xss scanning
     post_install
     end_time=$(date +%s)
     local elapsed_time=$((end_time - start_time))
