@@ -926,7 +926,7 @@ function install_urldedupe() {
     cd /opt/tools/urldedupe || exit
     cmake CMakeLists.txt
     make
-    ln -s /opt/tools/urldedupe /opt/tools/bin/urldedupe
+    ln -s /opt/tools/urldedupe/urldedupe /opt/tools/bin/urldedupe
     add-history urldedupe
     add-aliases urldedupe
     add-test-command "urldedupe -h"
