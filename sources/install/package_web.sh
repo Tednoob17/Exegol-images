@@ -919,6 +919,7 @@ function install_bbot() {
     add-test-command "bbot --help"
     add-to-list "BBOT,https://github.com/blacklanternsecurity/bbot,BEE·bot is a multipurpose scanner inspired by Spiderfoot built to automate your Recon and ASM."
 }
+
 function install_urldedupe() {
     # CODE-CHECK-WHITELIST=add-aliases,add-history
     colorecho "Installing urldedupe"
@@ -932,6 +933,7 @@ function install_urldedupe() {
     add-test-command "urldedupe -h"
     add-to-list "urldedupe,https://github.com/ameenmaali/urldedupe,urldedupe is a c++ tool to quickly pass in a list of URLs, and get back a list of deduplicated (unique) URL and query string combination. "
 }
+
 
 # Package dedicated to applicative and active web pentest tools
 function package_web() {
