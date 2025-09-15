@@ -926,7 +926,6 @@ function install_xsschecker() {
 	colorecho "Installing xsschecker"
 	go install github.com/rix4uni/xsschecker@latest
 	asdf reshim golang
-	add-aliases xsschecker
 	add-history xsschecker
 	add-test-command "xsschecker"
 	add-to-list "xsschecker,https://github.com/rix4uni/xsschecker,a tool that checking reflected endpoints finding possible xss vulnerable endpoints."
