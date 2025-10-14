@@ -1,0 +1,7 @@
+urldedupe -u urls.txt
+cat urls.txt | urldedupe
+cat urls.txt | urldedupe -s
+cat waybackurls | urldedupe > deduped_urls.txt
+cat urls.txt | urldedupe -r > deduped_urls_regex.txt
+urldedupe -u urls.txt -s -qs -ne
+urldedupe -u urls.txt -m "s,qs,ne"

@@ -922,7 +922,7 @@ function install_bbot() {
 function install_urldedupe() {
     # CODE-CHECK-WHITELIST=add-aliases
     colorecho "Installing urldedupe"
-    git -C /opt/tools/ clone https://github.com/ameenmaali/urldedupe.git
+    git -C /opt/tools/ clone --depth 1 https://github.com/ameenmaali/urldedupe.git
     cd /opt/tools/urldedupe || exit
     cmake CMakeLists.txt
     make
