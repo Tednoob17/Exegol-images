@@ -927,7 +927,6 @@ function install_jxscout() {
 	go install  github.com/francisconeves97/jxscout/cmd/jxscout@latest
 	asdf reshim golang
 	curl -fsSL https://bun.com/install | bash -s "bun-v1.2.12"
-	add-aliases jxscout
 	add-history jxscout
 	add-test-command "jxscout"
 	add-to-list "jxscout, https://github.com/francisconeves97/jxscout,a superpowers JavaScript analysis for security researchers."
