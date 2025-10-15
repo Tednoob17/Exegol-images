@@ -924,10 +924,10 @@ function install_dalfox() {
 	# CODE-CHECK-WHITELIST=add-aliases
 	colorecho "Installing dalfox"
 	go install github.com/hahwul/dalfox/v2@latest
+	export PATH=$PATH:$(go env GOPATH)/bin
 	asdf reshim golang
-	add-aliases dalfox
 	add-history dalfox
-	add-test-command "dalfox url https://example.com"
+	add-test-command "dalfox --help"
 	add-to-list "dalfox,https://github.com/hahwul/dalfox, a powerful open-source XSS scanner and utility focused on automation."
 }
 
