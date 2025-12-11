@@ -924,7 +924,6 @@ function install_dalfox() {
 	# CODE-CHECK-WHITELIST=add-aliases
 	colorecho "Installing dalfox"
 	go install github.com/hahwul/dalfox/v2@latest
-	export PATH=$PATH:$(go env GOPATH)/bin
 	asdf reshim golang
 	add-history dalfox
 	add-test-command "dalfox --help"
@@ -1012,7 +1011,7 @@ function package_web() {
     install_zap                     # Zed Attack Proxy
     install_token_exploiter         # Github personal token Analyzer
     install_bbot                    # Recursive Scanner
-    install_dalfox					# A automation tool for xss scanning
+    install_dalfox					# An automation tool for xss scanning
     post_install
     end_time=$(date +%s)
     local elapsed_time=$((end_time - start_time))
