@@ -927,7 +927,7 @@ function install_bxss() {
 	asdf reshim golang
 	add-aliases bxss
 	add-test-command "bxss"
-	add-to-list "bxss, https://github.com/ethicalhackingplayground/bxss, a tool that can be used to scan for blind XSS vulnerabilities in web applications."
+	add-to-list "bxss,https://github.com/ethicalhackingplayground/bxss,A tool that can be used to scan for blind XSS vulnerabilities in web applications."
 }
 
 
