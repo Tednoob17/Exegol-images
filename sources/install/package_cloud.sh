@@ -144,7 +144,7 @@ function install_s3scanner() {
 	# CODE-CHECK-WHITELIST=add-aliases
 	colorecho "Installing s3scanner"
 	git -C /opt/tools/ clone --depth 1 https://github.com/sa7mon/S3Scanner.git
-	cd /opt/tools/s3scanner || exit
+	cd /opt/tools/S3Scanner || exit
 	asdf reshim	golang
 	go build -o s3scanner .
 	ln -s /opt/tools/s3scanner/s3scanner /opt/tools/bin/s3scanner
