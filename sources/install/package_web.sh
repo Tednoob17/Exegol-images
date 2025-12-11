@@ -921,15 +921,15 @@ function install_bbot() {
 }
 
 function install_jxscout() {
-	# CODE-CHECK-WHITELIST=add-aliases
-	colorecho "Installing jxscout"
-	fapt unzip
-	go install  github.com/francisconeves97/jxscout/cmd/jxscout@latest
-	asdf reshim golang
-	curl -fsSL https://bun.com/install | bash -s "bun-v1.2.12"
-	add-history jxscout
-	add-test-command "jxscout"
-	add-to-list "jxscout, https://github.com/francisconeves97/jxscout,a superpowers JavaScript analysis for security researchers."
+    # CODE-CHECK-WHITELIST=add-aliases
+    colorecho "Installing jxscout"
+    fapt unzip
+    go install  github.com/francisconeves97/jxscout/cmd/jxscout@latest
+    asdf reshim golang
+    curl -fsSL https://bun.com/install | bash -s "bun-v1.2.12"
+    add-history jxscout
+    add-test-command "jxscout"
+    add-to-list "jxscout, https://github.com/francisconeves97/jxscout,a superpowers JavaScript analysis for security researchers."
 }
 
 # Package dedicated to applicative and active web pentest tools
