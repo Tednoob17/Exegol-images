@@ -924,7 +924,7 @@ function install_jxscout() {
 	# CODE-CHECK-WHITELIST=add-aliases
 	colorecho "Installing jxscout"
 	fapt unzip
-	go install  github.com/francisconeves97/jxscout/cmd/jxscout@latest
+	go install -v github.com/francisconeves97/jxscout/cmd/jxscout@latest
 	asdf reshim golang
 	curl -fsSL https://bun.com/install | bash -s "bun-v1.2.12"
 	add-history jxscout
